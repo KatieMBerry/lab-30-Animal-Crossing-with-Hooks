@@ -6,6 +6,6 @@ describe('AllVillagers container', () => {
     it('displays a loading screen & renders a list of villagers', async () => {
         render(<AllVillagers />);
         screen.getByText('Loading');
-        // const ul = await screen.findByTestId('villagers')
+        const ul = await screen.findByTestId('villagers')
     });
 });
