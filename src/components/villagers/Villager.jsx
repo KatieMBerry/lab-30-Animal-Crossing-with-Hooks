@@ -4,7 +4,8 @@ import styles from './Villager.css';
 
 const Villager = ({ id, name, image, quote, skill }) => (
 
-    <figure className={styles.Villager}>
+    <figure data-testid="villager"
+        className={styles.Villager}>
         <img src={image} alt={name} />
         <figcaption>{name}
             <p>Quote:{quote}</p>
@@ -15,7 +16,6 @@ const Villager = ({ id, name, image, quote, skill }) => (
 )
 
 Villager.propTypes = {
-    id: PropTypes.string,
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     quote: PropTypes.string.isRequired,
