@@ -12,12 +12,6 @@ exports[`Villager component renders Villager 1`] = `
     />
     <figcaption>
       Agnes
-      <p>
-        Quote:ou reap what you sow.
-      </p>
-      <p>
-        Skill:Cramming for tests
-      </p>
     </figcaption>
   </figure>
 </DocumentFragment>

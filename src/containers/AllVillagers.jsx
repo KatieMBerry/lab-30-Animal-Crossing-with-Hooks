@@ -7,10 +7,11 @@ const AllVillagers = () => {
     const [villagers, setVillagers] = useState([]);
 
     useEffect(() => {
-        findVillagers().then((villagers) => {
-            setVillagers(villagers);
-            setLoading(false);
-        });
+        findVillagers()
+            .then((villagers) => {
+                setVillagers(villagers);
+                setLoading(false);
+            });
     }, []);
 
     if (loading) return <h1>Loading</h1>;

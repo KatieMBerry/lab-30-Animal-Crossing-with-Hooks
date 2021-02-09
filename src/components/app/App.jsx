@@ -9,7 +9,7 @@ export default function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={AllVillagers} />
-        <Route exact path="/:id" component={VillagerById} />
+        <Route exact path="/villagers/:_id" component={VillagerById} />
       </Switch>
     </BrowserRouter>
   );

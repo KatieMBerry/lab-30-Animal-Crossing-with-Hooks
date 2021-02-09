@@ -2,24 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Villager.css';
 
-const Villager = ({ id, name, image, quote, skill }) => (
+const Villager = ({ image, name }) => (
 
     <figure data-testid="villager"
         className={styles.Villager}>
         <img src={image} alt={name} />
-        <figcaption>{name}
-            <p>Quote:{quote}</p>
-            <p>Skill:{skill}</p>
-        </figcaption>
+        <figcaption>{name}</figcaption>
     </figure>
 
 )
 
 Villager.propTypes = {
-    name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    quote: PropTypes.string.isRequired,
-    skill: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired
 }
 
 export default Villager;

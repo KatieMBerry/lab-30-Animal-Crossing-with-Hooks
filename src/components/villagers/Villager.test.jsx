@@ -8,8 +8,6 @@ describe('Villager component', () => {
         const { asFragment } = render(<Villager
             name='Agnes'
             image='https://vignette.wikia.nocookie.net/animalcrossing/images/4/42/Agnes_NH.png/revision/latest?cb=20200804230432'
-            quote='ou reap what you sow.'
-            skill='Cramming for tests'
         />);
         expect(asFragment()).toMatchSnapshot();
     });
