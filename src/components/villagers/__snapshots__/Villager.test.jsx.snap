@@ -2,7 +2,9 @@
 
 exports[`Villager component renders Villager 1`] = `
 <DocumentFragment>
-  <figure>
+  <figure
+    class="Villager"
+  >
     <img
       alt="Agnes"
       src="https://vignette.wikia.nocookie.net/animalcrossing/images/4/42/Agnes_NH.png/revision/latest?cb=20200804230432"
