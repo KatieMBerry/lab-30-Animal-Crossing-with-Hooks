@@ -1,0 +1,21 @@
+.Villager {
+    width: 10vw;
+
+    img {
+        width: 100%;
+    }
+
+    &:hover {
+        background-color: purple;
+        cursor: pointer;
+    }
+
+    figcaption {
+        color: white;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
