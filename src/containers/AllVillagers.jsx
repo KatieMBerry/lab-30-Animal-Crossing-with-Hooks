@@ -7,18 +7,17 @@ const AllVillagers = () => {
     const [villagers, setVillagers] = useState([]);
 
     useEffect(async () => {
-        findVillagers().then((villagers) => setVillagers(villagers),
-            setLoading(false));
+        findVillagers().then((villagers) => setVillagers(villagers), setLoading(false));
     }, []);
 
     return (
+        // if (loading) return 
         <>
-            if(loading) return  <h1>Loading</h1>
+            <h1>Loading</h1>;
             <VillagerList
                 villagers={villagers} />
         </>
     );
-
-};
+}
 
 export default AllVillagers;
