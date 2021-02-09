@@ -4,6 +4,7 @@ exports[`Villager component renders Villager 1`] = `
 <DocumentFragment>
   <figure
     class="Villager"
+    data-testid="villager"
   >
     <img
       alt="Agnes"
