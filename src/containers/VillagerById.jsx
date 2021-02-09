@@ -1,56 +1,40 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Villager from '../components/villagers/Villager';
+import VillagerDetail from '../components/details/VillagerDetail';
 import { findVillagerById } from '../services/findVillagers';
 
-// const VillagerById = () => {
-//     const [loading, setLoading] = useState(true);
-//     const [villager, setVillager] = useState('');
+const VillagerById = () => {
+    const [loading, setLoading] = useState(true);
+    const [villager, setVillager] = useState([]);
 
-//     useEffect(() => {
-//         const { match } = this.props;
-//         findVillagerById(match.params.id)
-//             .then(setVillager(villager));
-//         (setLoading(false));
-//     });
+    const { _id } = useParams();
 
-//     if (loading) return <h1>Loading</h1>;
-//     return <VillagerList villagers={villagers} />
-// }
+    useEffect(() => {
+        findVillagerById(_id)
+            .then(villager => {
+                setVillager(villager);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) return <h1>Loading</h1>;
+    return <VillagerDetail
+        name={villager.name}
+        image={villager.image}
+        quote={villager.quote}
+        skill={villager.skill}
+    />
+}
 
 // VillagerById.propTypes = {
 //     match: PropTypes.shape({
-//         id: PropTypes.string.isRequired
+//         params: PropTypes.shape({
+//             _id: PropTypes.string.isRequired
+//         }).isRequired
 //     }).isRequired
 // };
 
-export default class VillagerById extends Component {
-    static propTypes = {
-        match: PropTypes.shape({
-            params: PropTypes.shape({
-                id: PropTypes.string.isRequired
-            }).isRequired,
-        }).isRequired
-    };
-
-    state = {
-        loading: true,
-        villager: ''
-    };
-
-    async componentDidMount() {
-        const { match } = this.props;
-        const villager = await findVillagerById(match.params.id);
-        this.setState({ loading: false, villager });
-    }
-
-    render() {
-        const { loading, villager } = this.state;
-        if (loading) return <h1>Loading</h1>;
-        return <Villager villager={villager} />;
-    }
-}
-
-// export default VillagerById;
+export default VillagerById;
 
 
